@@ -40,8 +40,13 @@ Actualizar el índice de paquetes e instalar Docker Engine, containerd y Docker 
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
+Añadir tu usuario al grupo docker
+```
+sudo usermod -aG docker $USER
+```
 Verificar la instalación:
 ```
 sudo docker run hello-world
 ```
 Deberías ver un mensaje que indica que la instalación es exitosa.
+
