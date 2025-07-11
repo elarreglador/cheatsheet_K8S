@@ -81,3 +81,5 @@ NAME       STATUS   ROLES           AGE   VERSION
 minikube   Ready    control-plane   10m   v1.33.1
 
 ```
+### kubectl get pod nginx -o yaml
+Muestra el manifiesto de creacion del pod nginx ademas de las variables de entorno
