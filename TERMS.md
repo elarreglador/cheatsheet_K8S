@@ -1,8 +1,8 @@
 # TERMINOS IMPORTANTES
 
-## WORKER
+## POD
 
-maquina virtual en el que correran los contenedores
+Set de contenedores, aunque normalmente solo hay un contenedor, pero es posible que necesites un proceso auxiliar en el mismo pod.
 
 ## NODO
 
