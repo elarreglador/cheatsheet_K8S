@@ -2,15 +2,15 @@
 
 ## POD
 
-Set de contenedores, aunque normalmente solo hay un contenedor, pero es posible que necesites un proceso auxiliar en el mismo pod.
+Maquina virtual que contiene uno o varios contenedores ya que es posible que necesites varios procesos auxiliares en el mismo pod.
 
 ## NODO
 
-dispositivo fisico en el que corren los workers
+dispositivo fisico en el que corren los pods
 
 ## CLUSTER 
 
-conjunto de racks
+conjunto de nodos trabajando en conjunto
 
 ## Namespace
 
@@ -29,3 +29,7 @@ Cuando instalas Kubernetes (o Minikube), ya vienen con algunos Namespaces predef
 ## kubectl
 
 cliente de terminal para k8s.
+
+## Manifesto
+
+Archivo de tipo .yaml que contiene la informacion necesaria para generar un recurso
