@@ -3,6 +3,13 @@
 ### kubectl --help**
 Muestra la ayuda de kubectl
 
+### kubectl -n kube-system delete pod coredns-674b8bbfcf-4kr9x
+Elimina el pod coredns-674b8bbfcf-4kr9x del namespace kube-system delete
+```
+kubectl -n kube-system delete pod coredns-674b8bbfcf-4kr9x
+pod "coredns-674b8bbfcf-4kr9x" deleted
+```
+
 ### kubectl -n kube-system get pods
 Muestra los pods disponibles dentro del namespace kube-system (pods de sistema)
 ```
@@ -34,10 +41,13 @@ storage-provisioner                1/1     Running   0          69m   192.168.49
 ```
 
 ### kubectl apply -f mi-deployment.yaml --namespace=mi-namespace
-Permite desplegar un recurso en un Namespace específico
+Permite desplegar un recurso, por ejemplo un pod, en un Namespace específico. Si no se indica namespace se creara en namespace=default
 
 ### kubectl create namespace mi-proyecto
 Crea un nuevo namespace
+
+### kubectl exec -it my-pod -- bash
+ejecutar un comando dentro del contenedor principal de my-pod en ejecución en tu clúster. En este caso el terminal bash
 
 ### kubectl get namespaces o kubectl get ns
 Obtiene los namespaces
