@@ -50,3 +50,20 @@ sudo docker run hello-world
 ```
 Deberías ver un mensaje que indica que la instalación es exitosa.
 
+## INSTALAR kubectl
+Descarga la última versión estable de kubectl para Linux (amd64)
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+```
+Haz el binario ejecutable
+```
+chmod +x ./kubectl
+```
+Mueve el binario a un directorio en tu PATH (por ejemplo, /usr/local/bin)
+```
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+Verifica que kubectl se ha instalado correctamente y muestra la versión del cliente
+```
+kubectl version --client
+```
