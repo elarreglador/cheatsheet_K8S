@@ -3,6 +3,36 @@
 ### kubectl --help**
 Muestra la ayuda de kubectl
 
+### kubectl -n kube-system get pods
+Muestra los pods disponibles dentro del namespace kube-system (pods de sistema)
+```
+kubectl -n kube-system get pods
+
+NAME                               READY   STATUS    RESTARTS   AGE
+coredns-674b8bbfcf-4kr9x           1/1     Running   0          53m
+etcd-minikube                      1/1     Running   0          53m
+kube-apiserver-minikube            1/1     Running   0          53m
+kube-controller-manager-minikube   1/1     Running   0          53m
+kube-proxy-8drm4                   1/1     Running   0          53m
+kube-scheduler-minikube            1/1     Running   0          53m
+storage-provisioner                1/1     Running   0          53m
+```
+
+### kubectl -n kube-system get pods -o wide
+Muestra los pods disponibles dentro del namespace kube-system (pods de sistema) mostrando su IP y el nodo en el que corre
+```
+kubectl -n kube-system get pods -o wide
+
+NAME                               READY   STATUS    RESTARTS   AGE   IP             NODE       NOMINATED NODE   READINESS GATES
+coredns-674b8bbfcf-4kr9x           1/1     Running   0          69m   10.244.0.2     minikube   <none>           <none>
+etcd-minikube                      1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+kube-apiserver-minikube            1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+kube-controller-manager-minikube   1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+kube-proxy-8drm4                   1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+kube-scheduler-minikube            1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+storage-provisioner                1/1     Running   0          69m   192.168.49.2   minikube   <none>           <none>
+```
+
 ### kubectl apply -f mi-deployment.yaml --namespace=mi-namespace
 Permite desplegar un recurso en un Namespace específico
 
