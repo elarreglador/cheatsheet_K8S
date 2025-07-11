@@ -5,7 +5,7 @@ Kubernetes (k8s) permite orquestar contenedores independientemente de que sean u
 
 **WORKER** maquina virtual en el que correran los contenedores
 
-**RACK** dispositivo fisico en el que corren los workers
+**NODO** dispositivo fisico en el que corren los workers
 
 **CLUSTER** conjunto de racks
 
@@ -43,6 +43,7 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 Añadir tu usuario al grupo docker
 ```
 sudo usermod -aG docker $USER
+newgrp docker
 ```
 Verificar la instalación:
 ```
@@ -67,3 +68,67 @@ Verifica que kubectl se ha instalado correctamente y muestra la versión del cli
 ```
 kubectl version --client
 ```
+
+# INSTALAR Minikube
+Descarga la última versión de Minikube para Linux (amd64)
+```
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+```
+Mueve el binario a un directorio en tu PATH y establece permisos de ejecución
+```
+sudo install minikube-linux-amd64 /usr/local/bin/minikube
+```
+Elimina el archivo descargado (ya no es necesario)
+```
+rm minikube-linux-amd64
+```
+Verifica que Minikube se ha instalado correctamente
+```
+minikube version
+```
+
+## INICIAR CLUSTER K8S CON minikube
+```
+minikube start --driver=docker
+
+😄  minikube v1.36.0 on Ubuntu 24.04
+✨  Using the docker driver based on user configuration
+📌  Using Docker driver with root privileges
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.47 ...
+💾  Downloading Kubernetes v1.33.1 preload ...
+    > preloaded-images-k8s-v18-v1...:  347.04 MiB / 347.04 MiB  100.00% 36.26 M
+    > gcr.io/k8s-minikube/kicbase...:  502.26 MiB / 502.26 MiB  100.00% 31.80 M
+🔥  Creating docker container (CPUs=2, Memory=2200MB) ...
+🐳  Preparing Kubernetes v1.33.1 on Docker 28.1.1 ...
+    ▪ Generating certificates and keys ...
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+🔗  Configuring bridge CNI (Container Networking Interface) ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+```
+
+## VERIFICAR ESTADO DEL CLUSTER
+Verifica el estado de Minikube
+```
+minikube status
+
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+```
+Verifica los nodos de Kubernetes
+```
+kubectl get nodes
+
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   2m26s   v1.33.1
+```
+
