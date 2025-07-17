@@ -22,9 +22,21 @@ lxc shell worker1
 ```
 lxc exec worker1 -- ls -l /dev/ttyUSB0
 ```
+### SHELL A POD
+```
+kubectl exec -it <NOMBRE_DEL_POD> -- sh
+```
+o algo mas funcional:
+```
+kubectl exec -it <NOMBRE_DEL_POD> -- bash
+```
 ### VER PODS
 ```
 kubectl get pods
+```
+### LOG DEL POD
+```
+kubectl logs <NOMBRE_DEL_POD>
 ```
 ### APLICAR YAML
 ```
