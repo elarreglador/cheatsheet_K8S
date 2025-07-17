@@ -26,3 +26,7 @@ kubectl get pods
 ```
 kubectl apply -f archivo.yaml
 ```
+### RELACION DEV BY ID - /DEV/TTY (LINUX)
+```
+ls -l /dev/serial/by-id/
+```
