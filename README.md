@@ -9,3 +9,20 @@ ver [INSTALL.md](https://github.com/elarreglador/cheatsheet_K8S/blob/main/INSTAL
 
 ## COMANDOS UTILES
 VER [COMMANDS.md](https://github.com/elarreglador/cheatsheet_K8S/blob/main/COMMANDS.md)
+
+### VER NODOS
+```
+kubectl get nodes
+```
+### SHELL A NODO (VM)
+```
+lxc shell worker1
+```
+### VER PODS
+```
+kubectl get pods
+```
+### APLICAR YAML
+```
+kubectl apply -f archivo.yaml
+```
