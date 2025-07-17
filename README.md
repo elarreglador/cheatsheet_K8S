@@ -14,9 +14,13 @@ VER [COMMANDS.md](https://github.com/elarreglador/cheatsheet_K8S/blob/main/COMMA
 ```
 kubectl get nodes
 ```
-### SHELL A NODO (VM)
+### LXC: SHELL A NODO (VM)
 ```
 lxc shell worker1
+```
+### LXC: EJECUTAR COMANDO EN NODO (VM)
+```
+lxc exec worker1 -- ls -l /dev/ttyUSB0
 ```
 ### VER PODS
 ```
@@ -26,7 +30,5 @@ kubectl get pods
 ```
 kubectl apply -f archivo.yaml
 ```
-### RELACION DEV BY ID - /DEV/TTY (LINUX)
-```
-ls -l /dev/serial/by-id/
-```
+
+
