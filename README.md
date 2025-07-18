@@ -42,5 +42,9 @@ kubectl logs <NOMBRE_DEL_POD>
 ```
 kubectl apply -f archivo.yaml
 ```
+### OBTENER YAML ACTUAL
+```
+kubectl get deployment zigbee-ch15 -o yaml
+```
 
 
