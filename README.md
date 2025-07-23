@@ -22,6 +22,15 @@ lxc shell worker1
 ```
 lxc exec worker1 -- ls -l /dev/ttyUSB0
 ```
+### LXC: REINICIAR NODO (VM)
+```
+lxc restart worker1 -f
+```
+o mejor aun:
+```
+lxc stop worker1
+lxc start worker1
+```
 ### SHELL A POD
 ```
 kubectl exec -it <NOMBRE_DEL_POD> -- sh
